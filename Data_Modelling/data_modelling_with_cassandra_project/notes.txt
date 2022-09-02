@@ -1,0 +1,16 @@
+1.  This project is a demonstration of data analysis based on sparkify's data collection on songs and user activities on their new music streaming app.
+
+2.  The analysis is focused on understanding what songs users are listening to
+
+3.  We model this analysis with apache cassandra by creating three (3) tables (see below) to run queries and complete ETL pipe line using python
+
+    (a) event_data: keeps the session_id item_in_session, artist, song, and length of the song
+    (b) event_data2 : keeps the user_id, session_id,  item_in_session, artist, song, first_name and last_name of the artist
+    (c) event_data3 : keeps song, first_name and last_name of the artist
+
+4. The dataset used in the project is in (event_data) folder and a mini version of the data is event_datafile_new.csv in the current directory
+
+5. The data was loaded into the tables we have created in apache cassandra and necessary queries were run to populate it.
+
+6. The project, project_1B_Project_Template.ipynb consists of 2 parts. The first part deals with preprocessing the data and extracting a fraction of it into a new csv file
+ while the second part includes processing the data with apache cassandra
