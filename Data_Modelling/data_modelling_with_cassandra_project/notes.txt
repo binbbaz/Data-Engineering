@@ -4,9 +4,9 @@
 
 3.  We model this analysis with apache cassandra by creating three (3) tables (see below) to run queries and complete ETL pipe line using python
 
-    (a) event_data: keeps the session_id item_in_session, artist, song, and length of the song
-    (b) event_data2 : keeps the user_id, session_id,  item_in_session, artist, song, first_name and last_name of the artist
-    (c) event_data3 : keeps song, first_name and last_name of the artist
+    (a) songs_by_user_session: keeps the session_id item_in_session, artist, song, and length of the song
+    (b) artist_songs_by_item_session : keeps the user_id, session_id,  item_in_session, artist, song, first_name and last_name of the artist
+    (c) user_song_details : keeps song, user_id, first_name and last_name of the artist
 
 4. The dataset used in the project is in (event_data) folder and a mini version of the data is event_datafile_new.csv in the current directory
 
