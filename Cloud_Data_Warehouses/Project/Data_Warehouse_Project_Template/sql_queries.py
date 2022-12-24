@@ -7,13 +7,13 @@ config.read('/Users/abbas/Documents/udacity/mykeys/datawarehouseproject/dwh.cfg'
 
 # DROP TABLES
 
-staging_events_table_drop = "DROP TABLE IF EXISTS staging_events_table"
-staging_songs_table_drop = "DROP TABLE IF EXISTS staging_songs_table"
-songplay_table_drop = "DROP TABLE IF EXISTS songplay_table"
-user_table_drop = "DROP TABLE IF EXISTS user_table_drop"
-song_table_drop = "DROP TABLE IF EXISTS song_table_drop"
-artist_table_drop = "DROP TABLE IF EXISTS artist_table_drop"
-time_table_drop = "DROP TABLE IF EXISTS time_table_drop"
+staging_events_table_drop = "DROP TABLE IF EXISTS staging_events_table;"
+staging_songs_table_drop = "DROP TABLE IF EXISTS staging_songs_table;"
+songplay_table_drop = "DROP TABLE IF EXISTS songplay_table;"
+user_table_drop = "DROP TABLE IF EXISTS user_table_drop;"
+song_table_drop = "DROP TABLE IF EXISTS song_table_drop;"
+artist_table_drop = "DROP TABLE IF EXISTS artist_table_drop;"
+time_table_drop = "DROP TABLE IF EXISTS time_table_drop;"
 
 # CREATE TABLES
 
@@ -42,16 +42,16 @@ CREATE TABLE IF NOT EXISTS staging_events(
 
 staging_songs_table_create = ("""
     CREATE TABLE IF NOT EXISTS staging_songs (
-        artist_id VARCHAR,
-        artist_latitude FLOAT,
-        artist_location TEXT,
-        artist_longitude FLOAT,
-        artist_name VARCHAR,
-        duration FLOAT,
-        num_songs INT,
-        song_id VARCHAR,
-        title VARCHAR,
-        year INT
+        artist_id varchar,
+        artist_latitude float,
+        artist_location varchar,
+        artist_longitude float,
+        artist_name varchar,
+        duration float,
+        num_songs int,
+        song_id varchar,
+        title varchar,
+        year int
     );
 """)
 
@@ -182,7 +182,7 @@ WHERE song_id IS NOT NULL;
 """)
 
 artist_table_insert = ("""
-INSERT INTO artists (artist_id, name, location, latitude, longitude)
+INSERT INTO artists
 SELECT DISTINCT artist_id, artist_name, artist_location, artist_latitude, artist_longitude 
 FROM staging_songs;
 """)
