@@ -44,9 +44,9 @@ staging_songs_table_create = ("""
     CREATE TABLE IF NOT EXISTS staging_songs (
         artist_id varchar,
         artist_latitude float,
-        artist_location varchar,
+        artist_location varchar(MAX),
         artist_longitude float,
-        artist_name varchar,
+        artist_name varchar(MAX),
         duration float,
         num_songs int,
         song_id varchar,
@@ -97,7 +97,7 @@ song_table_create = ("""
 artist_table_create = ("""
     CREATE TABLE IF NOT EXISTS artists(
         artist_id varchar PRIMARY KEY,
-        name varchar,
+        name varchar (MAX),
         location varchar,
         latitude numeric,
         longitude numeric
@@ -149,19 +149,19 @@ INSERT INTO songplays (
     session_id,
     location,
     user_agent)
-    
+
     SELECT DISTINCT 
     TIMESTAMP 'epoch' + (ste.ts / 1000) * INTERVAL '1 second' as start_time,
                         ste.userId,
                         ste.level,
-                        ste.song_id,
-                        ste.artist_id,
-                        ste.session_id,
+                        sts.song_id,
+                        sts.artist_id,
+                        ste.sessionId,
                         ste.location,
-                        ste.user_agent
+                        ste.userAgent
 
     FROM  staging_songs sts
-    INNER JOIN staging events ste
+    INNER JOIN staging_events ste
     ON (sts.title = ste.song AND sts.artist_name = ste.artist)
     AND ste.page = 'NextSong';
 """)
