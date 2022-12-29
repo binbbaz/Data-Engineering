@@ -16,4 +16,4 @@ bucket before  staging them into the other tables (3-7)
 
 The S3 links to the datasets (Song and Log dataset) are in the file, dwh.cfg in thesame directory. 
 
-Note: MAKE SURE THAT THE S3 LINKS IN THE dwh.cfg FILE ARE CORRECT. I SPENT MORE THAN A WEEK FIXING ERRORS AS A RESULT OF WRITING '-' instead of '_'
+Note: MAKE SURE THAT THE S3 LINKS IN THE dwh.cfg FILE ARE CORRECT. I SPENT MORE THAN A WEEK FIXING ERRORS AS A RESULT OF WRITING '-' instead of '_' where unncessary
