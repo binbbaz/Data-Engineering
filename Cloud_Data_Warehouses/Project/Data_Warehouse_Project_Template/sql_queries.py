@@ -3,7 +3,7 @@ import configparser
 
 # CONFIG
 config = configparser.ConfigParser()
-config.read('/Users/abbas/Documents/udacity/mykeys/datawarehouseproject/dwh.cfg')
+config.read('dwh.cfg')
 
 # DROP TABLES
 
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS time (
     week int,
     month int,
     year int,
-    weekday int
+    weekday VARCHAR(9) ENCODE BYTEDICT
     )
 
     DISTSTYLE KEY

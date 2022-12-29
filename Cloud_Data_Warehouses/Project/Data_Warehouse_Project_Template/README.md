@@ -1,3 +1,5 @@
+# Database purpose
+
 The purpose of this database is to move current sparkify's processes onto the cloud by staging their data from S3 bucket to a database hosted on 
 Redshift. The idea is to be able to build and ETL pipeline that allows transformation of the data into a set of dimensional
 tables for Sparkify's analystical team to continue finding insights into what songs their users are listening to and make 
@@ -16,4 +18,11 @@ bucket before  staging them into the other tables (3-7)
 
 The S3 links to the datasets (Song and Log dataset) are in the file, dwh.cfg in thesame directory. 
 
-Note: MAKE SURE THAT THE S3 LINKS IN THE dwh.cfg FILE ARE CORRECT. I SPENT MORE THAN A WEEK FIXING ERRORS AS A RESULT OF WRITING '-' instead of '_' where unncessary
+## Note: MAKE SURE THAT THE S3 LINKS IN THE dwh.cfg FILE ARE CORRECT. I SPENT MORE THAN A WEEK FIXING ERRORS AS A RESULT OF WRITING '-' instead of '_' where unnecessary
+
+## INSTRUCTIONS ON HOW TO RUN SCRIPTS
+    -  specify your  CLUSTER and IAM_ROLE credentials in dwh.cfg
+    -  run python create_tables.py (you can try with a smaller subset of the data by changing SONG_DATA link in dwh.cfg to 's3://udacity-dend/song_data/A/A'). Then
+    use the full dataset when everything works for you
+    -  run python etl.py
+    - Check your cluster on AWS to confirm data submission
